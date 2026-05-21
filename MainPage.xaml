@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GuessTheNumber.MainPage"
+             BackgroundColor="#0D0D0D">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="40" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="УГАДАЙ ЧИСЛО"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#00FF88"
+                   HorizontalOptions="Center"/>
+
+            <Label x:Name="DifficultyLabel"
+                   Text="Я загадал число от 1 до 100"
+                   FontSize="16"
+                   TextColor="#888888"
+                   HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Button Text="🟢 Лёгкий"
+                        Clicked="OnEasyClicked"
+                        x:Name="EasyButton"
+                        BackgroundColor="#1A3A1A"
+                        TextColor="#00FF88"
+                        FontSize="14"
+                        CornerRadius="10"
+                        BorderColor="#00FF88"
+                        BorderWidth="2"/>
+                <Button Text="🟡 Средний"
+                        Clicked="OnMediumClicked"
+                        x:Name="MediumButton"
+                        BackgroundColor="#1A1A1A"
+                        TextColor="#FFD700"
+                        FontSize="14"
+                        CornerRadius="10"
+                        BorderColor="#444444"
+                        BorderWidth="1"/>
+                <Button Text="🔴 Сложный"
+                        Clicked="OnHardClicked"
+                        x:Name="HardButton"
+                        BackgroundColor="#1A1A1A"
+                        TextColor="#FF4444"
+                        FontSize="14"
+                        CornerRadius="10"
+                        BorderColor="#444444"
+                        BorderWidth="1"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label Text="ВРЕМЯ"
+                           FontSize="11"
+                           TextColor="#444444"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                    <Label x:Name="TimerLabel"
+                           Text="0 сек"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#FFFFFF"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label Text="РЕКОРД"
+                           FontSize="11"
+                           TextColor="#444444"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                    <Label x:Name="RecordLabel"
+                           Text="—"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#FFD700"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label Text="ПОПЫТКИ"
+                           FontSize="11"
+                           TextColor="#444444"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                    <Label x:Name="AttemptsLabel"
+                           Text="0"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#FFFFFF"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <Entry x:Name="GuessEntry"
+                   Placeholder="Введи число..."
+                   PlaceholderColor="#444444"
+                   TextColor="#FFFFFF"
+                   BackgroundColor="#1A1A1A"
+                   FontSize="20"
+                   HorizontalOptions="Fill"
+                   Keyboard="Numeric"/>
+
+            <Button Text="ПРОВЕРИТЬ"
+                    x:Name="GuessButton"
+                    Clicked="OnGuessClicked"
+                    BackgroundColor="#00FF88"
+                    TextColor="#0D0D0D"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    CornerRadius="12"
+                    HeightRequest="55"/>
+
+            <Label x:Name="HintLabel"
+                   Text=""
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#FFFFFF"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="ИСТОРИЯ ПОПЫТОК"
+                   FontSize="13"
+                   TextColor="#444444"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   x:Name="HistoryTitleLabel"/>
+
+            <VerticalStackLayout x:Name="HistoryLayout" Spacing="8"/>
+
+            <Button Text="НОВАЯ ИГРА"
+                    Clicked="OnNewGameClicked"
+                    BackgroundColor="#1A1A1A"
+                    TextColor="#00FF88"
+                    FontSize="16"
+                    CornerRadius="12"
+                    HeightRequest="45"
+                    BorderColor="#00FF88"
+                    BorderWidth="1"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

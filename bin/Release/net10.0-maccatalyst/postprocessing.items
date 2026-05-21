@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="GuessTheNumber.app/Contents\MacOS\">
+      <IsAppExtension>false</IsAppExtension>
+      <BCSymbolMapName>.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>GuessTheNumber.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile></SymbolFile>
+      <DSymName>GuessTheNumber.app.dSYM</DSymName>
+      <SourceProjectPath>C:\Users\olegm\source\repos\GuessTheNumber</SourceProjectPath>
+      <IsXPCService></IsXPCService>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>
