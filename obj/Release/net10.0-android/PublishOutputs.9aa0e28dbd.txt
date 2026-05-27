@@ -1,4 +1,0 @@
-C:\Users\olegm\source\repos\GuessTheNumber\bin\Release\net10.0-android\publish\com.companyname.guessthenumber-Signed.aab
-C:\Users\olegm\source\repos\GuessTheNumber\bin\Release\net10.0-android\publish\com.companyname.guessthenumber.aab
-C:\Users\olegm\source\repos\GuessTheNumber\bin\Release\net10.0-android\publish\com.companyname.guessthenumber-Signed.apk
-C:\Users\olegm\source\repos\GuessTheNumber\bin\Release\net10.0-android\publish\_Microsoft.Android.Resource.Designer.dll

@@ -1,8 +1,0 @@
-<api type="release" assembly-name="GuessTheNumber" mvid="d67a43bafd934f49870019df7d32ae6a">
-  <module assembly-name="GuessTheNumber" mvid="d67a43bafd934f49870019df7d32ae6a" mvid-bytes="ukN61pP9SU+HABnffTKuag==">
-    <types-scratch>
-      <entry key="crc647a9f6971f76fa391/MainActivity" java-name="crc647a9f6971f76fa391/MainActivity" managed-type-name="GuessTheNumber.MainActivity" token="33554441" />
-      <entry key="crc647a9f6971f76fa391/MainApplication" java-name="crc647a9f6971f76fa391/MainApplication" managed-type-name="GuessTheNumber.MainApplication" token="33554442" />
-    </types-scratch>
-  </module>
-</api>

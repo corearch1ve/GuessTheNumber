@@ -2,10 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GuessTheNumber.MainPage"
+             x:Name="RootPage"
              BackgroundColor="#0D0D0D">
 
     <ScrollView>
         <VerticalStackLayout Padding="40" Spacing="20" VerticalOptions="Center">
+
+            <!-- Кнопка смены темы в правом углу -->
+            <HorizontalStackLayout HorizontalOptions="End">
+                <Button Text="☀️"
+                        x:Name="ThemeButton"
+                        Clicked="OnThemeToggleClicked"
+                        BackgroundColor="Transparent"
+                        TextColor="#888888"
+                        FontSize="22"
+                        BorderWidth="0"
+                        Padding="0"/>
+            </HorizontalStackLayout>
 
             <Label Text="УГАДАЙ ЧИСЛО"
                    FontSize="32"
@@ -14,11 +27,12 @@
                    HorizontalOptions="Center"/>
 
             <Label x:Name="DifficultyLabel"
-                   Text="Я загадал число от 1 до 100"
+                   Text="Я загадал число от 1 до 10"
                    FontSize="16"
                    TextColor="#888888"
                    HorizontalOptions="Center"/>
 
+            <!-- Выбор сложности -->
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                 <Button Text="🟢 Лёгкий"
                         Clicked="OnEasyClicked"
@@ -49,6 +63,36 @@
                         BorderWidth="1"/>
             </HorizontalStackLayout>
 
+            <!-- Выбор режима -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Button Text="🆓 Free"
+                        Clicked="OnFreeModeClicked"
+                        x:Name="FreeModeButton"
+                        BackgroundColor="#1A1A2A"
+                        TextColor="#AAAAFF"
+                        FontSize="14"
+                        CornerRadius="10"
+                        BorderColor="#AAAAFF"
+                        BorderWidth="2"/>
+                <Button Text="⚔️ Challenge"
+                        Clicked="OnChallengeModeClicked"
+                        x:Name="ChallengeModeButton"
+                        BackgroundColor="#1A1A1A"
+                        TextColor="#FF8800"
+                        FontSize="14"
+                        CornerRadius="10"
+                        BorderColor="#444444"
+                        BorderWidth="1"/>
+            </HorizontalStackLayout>
+
+            <!-- Описание режима -->
+            <Label x:Name="ModeLabel"
+                   Text="Режим: Free — неограниченные попытки"
+                   FontSize="13"
+                   TextColor="#666666"
+                   HorizontalOptions="Center"/>
+
+            <!-- Статистика -->
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
                 <VerticalStackLayout HorizontalOptions="Center">
                     <Label Text="ВРЕМЯ"
@@ -93,6 +137,21 @@
                 </VerticalStackLayout>
             </HorizontalStackLayout>
 
+            <!-- Прогресс попыток (только в Challenge) -->
+            <VerticalStackLayout x:Name="ChallengeProgressLayout" IsVisible="False" Spacing="4">
+                <Label x:Name="AttemptsLeftLabel"
+                       Text=""
+                       FontSize="14"
+                       TextColor="#FF8800"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+                <ProgressBar x:Name="AttemptsProgressBar"
+                             Progress="1"
+                             ProgressColor="#FF8800"
+                             BackgroundColor="#2A2A2A"
+                             HeightRequest="8"/>
+            </VerticalStackLayout>
+
             <Entry x:Name="GuessEntry"
                    Placeholder="Введи число..."
                    PlaceholderColor="#444444"
@@ -128,8 +187,20 @@
 
             <VerticalStackLayout x:Name="HistoryLayout" Spacing="8"/>
 
+            <Button Text="НАЧАТЬ ИГРУ"
+                    x:Name="StartButton"
+                    Clicked="OnStartGameClicked"
+                    BackgroundColor="#00FF88"
+                    TextColor="#0D0D0D"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    CornerRadius="12"
+                    HeightRequest="45"/>
+
             <Button Text="НОВАЯ ИГРА"
+                    x:Name="NewGameButton"
                     Clicked="OnNewGameClicked"
+                    IsVisible="False"
                     BackgroundColor="#1A1A1A"
                     TextColor="#00FF88"
                     FontSize="16"
